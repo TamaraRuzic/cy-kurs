@@ -1,0 +1,20 @@
+{
+    "addingOrganisation" : {
+        "addNewOrganisation" : "div[class='vs-c-my-organization vs-c-my-organization--add-new not-sortable']",
+        "organisationName" : "input[placeholder='Enter name...']",
+        "cancelButton" : "div[class='dialog-footer'] > button:nth-child(2)",
+        "nextButton" : "div[class='dialog-footer'] > button:nth-child(3) ",
+        "uploadDragger" : "div[class='el-upload-dragger']",
+        "previous": "div[class='dialog-footer'] > button:nth-child(2)",
+        "create" : "div[class='dialog-footer'] > button:nth-child(3)"
+    },
+    "organisationCard" : {
+        "editOrganisation" : "svg[class='vs-c-icon vs-c-icon--edit']",
+        "archiveOrganisation" : "span[title='Archive Organization'] > svg:nth-child(1)",
+        "newProject" : "li[class='vs-c-my-organization__project vs-c-my-organization__project-new']",
+        "addNewProject" : "li[class='vs-c-my-organization__project vs-c-my-organization__project-new']",
+        "addNewBoard" : "li[class='vs-c-my-organization__board vs-c-my-organization__board-new']"
+    }
+    
+
+}

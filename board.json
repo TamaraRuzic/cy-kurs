@@ -1,0 +1,34 @@
+{
+    "addBoard" : {
+        "addNewBoard" : "div[class='vs-c-boards-item__header--add-new']",
+        "selectOrganisation" : "div[class='el-select vs-c-new-board-select']",
+        "selectDropdownItem" : "li[class='el-select-dropdown__item vs-c-select-dropdown__item vs-c-new-board-dropdown selected hover']",
+        "enterBoardName" : "input[placeholder='Enter title...']",
+        "prevButton" : "button[name='prev_btn']",
+        "nextButton" : "button[name='next_btn']",
+        "scrumType" : "span[name='type_scrum']",
+        "kanbanType" : "span[name='type_kanban']",
+        "uploadLogo" : "svg[slot='dropdown-button']",
+        "closeModalBtn" : "button[class='el-button vs-c-close-modal el-button--text el-button--small']"
+    },
+    "boardSidebar" : {
+        "productBacklog" : "a[class='vs-c-site-logo router-link-exact-active router-link-active']",
+        "stats" : "a[href='/boards/948/stats']",
+        "lables" : "a[href='/boards/948/labels']",
+        "files" : "a[href='/boards/948/files']",
+        "docs" : "a[href='/boards/948/documents']",
+        "worklogs" : "a[href='/boards/948/worklogs']",
+        "team" : "a[href='/boards/948/team']",
+        "trash" : "a[href='/boards/948/trash']",
+        "settings" : "a[href='/boards/948/settings']"
+    },
+    "boardSettings" : {
+        "deleteBoard" : "button[class='vs-c-btn vs-c-btn--warning vs-c-btn--spaced']",
+        "archiveBoard" : "button[class='vs-c-btn vs-c-btn--success vs-c-btn--spaced']",
+        "boardAvatarUpload" : "div[class='vs-c-img--avatar vs-c-img--board-avatar-lg']",
+        "uploadDragger" : "div[class='el-upload-dragger']",
+        "cancelUpload" : "button[class='el-button el-button--warning el-button--button']",
+        "saveLogo" : "button[class='el-button el-button--success el-button--button']"
+    }
+   
+}
