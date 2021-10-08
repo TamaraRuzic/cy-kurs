@@ -1,7 +1,7 @@
 {
     "backToPricing" : "span[class='vs-u-text--uppercase vs-c-auth-modal__body-text vs-u-font-lg vs-u-gap--left-sm']",
-    "registerEmail" : "input[data-vv-as='email']",
-    "registerPass" : "input[data-vv-as='password']:nth-child(1)",
+    "registerEmail" : "form[class='el-form'] > div:nth-child(1) > div[class='el-form-item__content'] > div[class='el-input'] > input[type='email']",
+    "registerPass" : "form[class='el-form'] > div:nth-child(2) > div[class='el-form-item__content'] > div[class='el-input'] > input[type='password']",
     "showPass" : "button[class='vs-c-btn--icon vs-u-color--modal-body-text']",
     "numberOfUsers" : "input[data-vv-as='number of users']",
     "acceptTerms" : "span[class='vs-c-checkbox-check]",

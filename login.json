@@ -1,6 +1,6 @@
 {
-    "loginEmail" : "input[data-vv-as='email']",
-    "loginPass" : "input[data-vv-as='password']:nth-child(1)",
+    "loginEmail" : "form[class='el-form'] > div:nth-child(1) > div[class='el-form-item__content'] > div[class='el-input'] > input[type='email']",
+    "loginPass" : "form[class='el-form'] > div:nth-child(2) > div[class='el-form-item__content'] > div[class='el-input'] > input[type='password']",
     "forgotPass" : "a[class='vs-c-auth-modal__body-text vs-c-auth-modal__body-text--small']",
     "submitBtn" : "button[type='submit']",
     "backHome" : "a[class='vs-u-font-bold vs-u-text--uppercase vs-c-auth-modal__body-text']",
