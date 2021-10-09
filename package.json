@@ -1,0 +1,22 @@
+{
+  "name": "cykurs",
+  "version": "1.0.0",
+  "description": "course",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TamaraRuzic/cy-kurs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TamaraRuzic/cy-kurs/issues"
+  },
+  "homepage": "https://github.com/TamaraRuzic/cy-kurs#readme",
+  "dependencies": {
+    "cypress": "^8.5.0"
+  }
+}
