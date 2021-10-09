@@ -1,0 +1,13 @@
+{
+    "loginEmail" : "form[class='el-form'] > div:nth-child(1) > div[class='el-form-item__content'] > div[class='el-input'] > input[type='email']",
+    "loginPass" : "form[class='el-form'] > div:nth-child(2) > div[class='el-form-item__content'] > div[class='el-input'] > input[type='password']",
+    "forgotPass" : "a[class='vs-c-auth-modal__body-text vs-c-auth-modal__body-text--small']",
+    "submitBtn" : "button[type='submit']",
+    "backHome" : "a[class='vs-u-font-bold vs-u-text--uppercase vs-c-auth-modal__body-text']",
+    "googleSignUp" : "button[class='vs-c-btn vs-c-btn--social-auth vs-c-btn--gp disabled']",
+    "fbSignUp" : "button[class='vs-c-btn vs-c-btn--social-auth vs-c-btn--fb']",
+    "tweeterSignUp" : "button[class='vs-c-btn vs-c-btn--social-auth vs-c-btn--tw']",
+    "regzenSignUp" : "button[class='vs-c-btn vs-c-btn--social-auth vs-c-btn--regzen']",
+    "alreadyHaveAcc" : "a[class='vs-c-btn vs-c-btn--link']",
+    "newAccount" : "a[class='vs-u-font-bold vs-c-auth-modal__bottom-text-main vs-u-text--uppercase']"
+}

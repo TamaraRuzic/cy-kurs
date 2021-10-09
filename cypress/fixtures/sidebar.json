@@ -10,5 +10,7 @@
     "starred" : "a[href='/boards/97904'] > div > svg[class='vs-c-icon']",
     "addNewBottom" : "div[class='vs-c-list__btn vs-c-list-btn--add-new el-tooltip']",
     "addNewBoard" : "div[class='el-tooltip__popper is-light el-tooltip-sidebar'] > div[class='vs-c-tooltip-active-sprints'] > ul[class='vs-c-list'] > li:nth-child(1) > a[css='1']",
-    "myUser" : "span[class='vs-c-user-name']"
+    "myUser" : "span[class='vs-c-user-name']",
+    "profile" : ":nth-child(4) > [effect='dark'] > :nth-child(2) > .vs-c-site-logo",
+    "logout" : "button[class='vs-c-btn vs-c-btn--link vs-c-btn--danger']"
 }

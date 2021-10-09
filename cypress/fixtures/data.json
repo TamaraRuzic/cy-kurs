@@ -1,0 +1,21 @@
+{
+    "user" : {
+        "email" : "tamara.ruzic@vivify.com",
+        "password" : "Test1234!"
+    },
+
+    "invalidUser" : {
+        "invalidEmail" : "tamara.ruzic@vivify.com",
+        "noMonkeyEmail" : "tamra.ruzicvivifyideas.com",
+        "invalidPassword" : "Test1",
+        "shortPass" : "tam"
+    },
+
+    "newUser" : {
+        "name" : "Tamara",
+        "lastName" : "Ruzic",
+        "registerEmail" : "tamara@mailinator.com",
+        "registerPass": "Test1234!"
+    }     
+
+}
