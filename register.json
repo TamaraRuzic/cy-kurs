@@ -1,0 +1,22 @@
+{
+    "backToPricing" : "span[class='vs-u-text--uppercase vs-c-auth-modal__body-text vs-u-font-lg vs-u-gap--left-sm']",
+    "registerEmail" : "form[class='el-form'] > div:nth-child(1) > div[class='el-form-item__content'] > div[class='el-input'] > input[type='email']",
+    "registerPass" : "form[class='el-form'] > div:nth-child(2) > div[class='el-form-item__content'] > div[class='el-input'] > input[type='password']",
+    "showPass" : "button[class='vs-c-btn--icon vs-u-color--modal-body-text']",
+    "numberOfUsers" : "input[data-vv-as='number of users']",
+    "acceptTerms" : "span[class='vs-c-checkbox-check]",
+    "pricePlanMonth" : "div[class='vs-c-switch-pricing-plan-list']:nth-child(0)",
+    "pricePlanAnnaul" : "div[class='vs-c-switch-pricing-plan-list']:nth-child(1)",
+    "startTrial" : "button[class='vs-c-btn vs-c-btn--primary vs-c-btn--spaced vs-u-font-weight-bold vs-c-btn-auth--top-gap vs-c-btn--lg vs-u-font-weight-regular vs-u-font-md']",
+    "googleSignUp" : "button[class='vs-c-btn vs-c-btn--social-auth vs-c-btn--gp disabled']",
+    "fbSignUp" : "button[class='vs-c-btn vs-c-btn--social-auth vs-c-btn--fb']",
+    "tweeterSignUp" : "button[class='vs-c-btn vs-c-btn--social-auth vs-c-btn--tw']",
+    "regzenSignUp" : "button[class='vs-c-btn vs-c-btn--social-auth vs-c-btn--regzen']",
+    "alreadyHaveAcc" : "a[class='vs-c-btn vs-c-btn--link']",
+    "addFirstName" : "input[data-vv-as='first name']",
+    "addLastName" : "input[data-vv-as='last name']",
+    "addCompanyName" : "input[placeholder='Type company name']",
+    "addOrganisationName" : "input[data-vv-as='organization name']",
+    "finishRegistration" : "button[class='vs-c-btn vs-c-btn--primary vs-c-btn--spaced vs-u-font-weight-bold vs-c-btn-auth--top-gap vs-c-btn--lg']",
+    "cancelRegistration" : "button[class='vs-c-btn vs-c-btn--danger vs-c-btn--spaced vs-u-font-weight-bold vs-c-btn-auth--top-gap vs-u-gap--top-sm']"
+}
