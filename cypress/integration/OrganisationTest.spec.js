@@ -85,10 +85,11 @@ describe('Organization test block', () => {
         cy.get(organisation.organisationInfo.deleteOrganisation).click();
         cy.get(organisation.organisationInfo.enterPasswordToDelete).type(data.invalidUser.invalidPassword);
         cy.get(organisation.organisationInfo.yesDelete).click();
+        cy.get(organisation.organisationInfo.closeDeleteModal).click();
     })
 
     it('delete organisation', () => {
-        cy.get(organisation.organisationInfo.deleteOrganisation).click();
+        cy.get(organisation.organisationInfo.deleteOrganisation, {timeout: 5000}).click();
         cy.get(organisation.organisationInfo.enterPasswordToDelete).clear().type(data.user.password);
         cy.get(organisation.organisationInfo.yesDelete).click();
     })
