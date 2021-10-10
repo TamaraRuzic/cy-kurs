@@ -1,11 +1,11 @@
 {
     "user" : {
-        "email" : "tamara.ruzic@vivify.com",
+        "email" : "tamara.ruzic@vivifyideas.com",
         "password" : "Test1234!"
     },
 
     "invalidUser" : {
-        "invalidEmail" : "tamara.ruzic@vivify.com",
+        "invalidEmail" : "tamara65@vivify1",
         "noMonkeyEmail" : "tamra.ruzicvivifyideas.com",
         "invalidPassword" : "Test1",
         "shortPass" : "tam"
@@ -14,8 +14,16 @@
     "newUser" : {
         "name" : "Tamara",
         "lastName" : "Ruzic",
-        "registerEmail" : "tamara@mailinator.com",
+        "registerEmail" : "taki@mailinator.com",
         "registerPass": "Test1234!"
-    }     
+    },
+    
+    "newOrganisation" : {
+        "organisationName" : "Dummy name",
+        "newOrganisationName" : "Fun",
+        "daysPerYear" : "25",
+        "monthsRequiredForVacation" : "6",
+        "additionalVacationDays" : "10"
+    }
 
 }
