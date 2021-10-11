@@ -10,8 +10,11 @@
         "okBtn" : ".vs-c-modal--features-button > .vs-c-btn"
     },
     "organisationCard" : {
+        "initialOrganisation" : "div[class='vs-c-my-organizations-item-wrapper'] > div:nth-child(1)",
         "editOrganisation" : "svg[class='vs-c-icon vs-c-icon--edit']",
         "archiveOrganisation" : "span[title='Archive Organization'] > svg:nth-child(1)",
+        "unarchiveBoard" : ":nth-child(3) > :nth-child(1) > .vs-c-boards-item__content",
+        "submitActiv" : "button[class='el-button el-button--success el-button']",
         "newProject" : "li[class='vs-c-my-organization__project vs-c-my-organization__project-new']",
         "addNewProject" : "li[class='vs-c-my-organization__project vs-c-my-organization__project-new']",
         "addNewBoard" : "li[class='vs-c-my-organization__board vs-c-my-organization__board-new']"

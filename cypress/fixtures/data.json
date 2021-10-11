@@ -1,6 +1,6 @@
 {
     "user" : {
-        "email" : "tamara.ruzic@vivifyideas.com",
+        "email" : "tamara.ruzic@vivify.com",
         "password" : "Test1234!"
     },
 
@@ -24,6 +24,13 @@
         "daysPerYear" : "25",
         "monthsRequiredForVacation" : "6",
         "additionalVacationDays" : "10"
-    }
+    },
+
+    "newBoard" : {
+        "boardName" : "It Crowd",
+        "boardDesc" : "This is a test description",
+        "newTitle" : "Internet",
+        "code" : "MMTK"
+    } 
 
 }

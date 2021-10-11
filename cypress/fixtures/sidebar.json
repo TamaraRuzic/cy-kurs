@@ -5,6 +5,7 @@
     "addBoard" : "div[class='el-tooltip__popper is-light el-tooltip-sidebar'] > div[class='vs-c-tooltip-active-sprints'] > ul[class='vs-c-list'] > li:nth-child(2)",
     "importBoardFrom" : "div[class='el-tooltip__popper is-light el-tooltip-sidebar'] > div[class='vs-c-tooltip-active-sprints'] > ul[class='vs-c-list'] > li:nth-child(3)",
     "showOrganisation" : "button[class='vs-c-btn vs-c-btn--link vs-c-btn--sm vs-c-list__caret collapsed']",
+    "myOrganisation" : "div[class='vb-content'] [class='vs-c-list__btn router-link-exact-active router-link-active active']",
     "firstBoard" : "a[href='/boards/97904']",
     "secondBoard" : "a[href='/boards/100602']",
     "starred" : "a[href='/boards/97904'] > div > svg[class='vs-c-icon']",

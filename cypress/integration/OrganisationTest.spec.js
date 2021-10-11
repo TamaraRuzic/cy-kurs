@@ -1,6 +1,4 @@
 import organisation from "../fixtures/organisation.json";
-import sidebar from "../fixtures/sidebar.json";
-import navigation from "../fixtures/navigation.json";
 import loginPage from "../fixtures/login.json";
 import data from "../fixtures/data.json"
 
@@ -10,7 +8,7 @@ describe('Organization test block', () => {
         cy.get(loginPage.loginEmail).clear().type(data.user.email);
         cy.get(loginPage.loginPass).clear().type(data.user.password);
         cy.get(loginPage.submitBtn).click();
-    })
+    });
 
     it('create organization', () => {
         //cy.visit('/my-organizations');
@@ -74,19 +72,19 @@ describe('Organization test block', () => {
         cy.get(organisation.organisationInfo.deleteOrganisation).click();
         cy.get(organisation.organisationInfo.enterPasswordToDelete).type(data.user.password);
         cy.get(organisation.organisationInfo.noDelete).click();
-    })
+    });
 
     it('close delete modal', () => {
         cy.get(organisation.organisationInfo.deleteOrganisation).click();
         cy.get(organisation.organisationInfo.closeDeleteModal).click();
-    })
+    });
 
-    it('delete organisation failed', () => {
+    it('delete organisation failed due to wrong password', () => {
         cy.get(organisation.organisationInfo.deleteOrganisation).click();
         cy.get(organisation.organisationInfo.enterPasswordToDelete).type(data.invalidUser.invalidPassword);
         cy.get(organisation.organisationInfo.yesDelete).click();
         cy.get(organisation.organisationInfo.closeDeleteModal).click();
-    })
+    });
 
     it('delete organisation', () => {
         cy.get(organisation.organisationInfo.deleteOrganisation, {timeout: 5000}).click();
