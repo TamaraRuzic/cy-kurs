@@ -11,11 +11,10 @@ describe('Organization test block', () => {
     });
 
     it('create organization', () => {
-        //cy.visit('/my-organizations');
-        cy.get(organisation.addingOrganisation.addNewOrganisation, {timeout : 5000}).click();
+        cy.get(organisation.addingOrganisation.addNewOrganisation, { timeout: 5000 }).click();
         cy.get(organisation.addingOrganisation.organisationName).type(data.newOrganisation.organisationName);
-        cy.get(organisation.addingOrganisation.nextButton, {timeout : 3000}).click();
-        cy.get(organisation.addingOrganisation.nextButton, {timeout: 3000}).click();
+        cy.get(organisation.addingOrganisation.nextButton, { timeout: 3000 }).click();
+        cy.get(organisation.addingOrganisation.nextButton, { timeout: 3000 }).click();
         cy.get(organisation.addingOrganisation.okBtn).click();
 
     });
@@ -33,10 +32,10 @@ describe('Organization test block', () => {
     });
 
     it('select workdays and set calendar start day', () => {
-        cy.get(organisation.organisationInfo.checkboxFri);
-        cy.get(organisation.organisationInfo.checkboxMonday);
+        cy.get(organisation.organisationInfo.checkboxFri).click();
+        cy.get(organisation.organisationInfo.checkboxMonday).click();
         cy.get(organisation.organisationInfo.startDaydropdown).click();
-        cy.get(organisation.organisationInfo.dropdownItemMon);
+        cy.get(organisation.organisationInfo.dropdownItemMon).click();
     });
 
     it('vacation days per year failed', () => {
@@ -56,8 +55,12 @@ describe('Organization test block', () => {
     });
 
     it('working months, additional vacation days granted and unused vacation', () => {
-        cy.get(organisation.organisationInfo.workingMonths).clear().type(data.newOrganisation.monthsRequiredForVacation);
-        cy.get(organisation.organisationInfo.additionalVacation).clear().type(data.newOrganisation.additionalVacationDays);
+        cy.get(organisation.organisationInfo.workingMonths)
+            .clear()
+            .type(data.newOrganisation.monthsRequiredForVacation);
+        cy.get(organisation.organisationInfo.additionalVacation)
+            .clear()
+            .type(data.newOrganisation.additionalVacationDays);
         cy.get(organisation.organisationInfo.periodForUnusedVacation).click();
         cy.get(organisation.organisationInfo.middleOfNextYear).click();
         cy.get(organisation.organisationInfo.updateVacation).click();
@@ -87,8 +90,10 @@ describe('Organization test block', () => {
     });
 
     it('delete organisation', () => {
-        cy.get(organisation.organisationInfo.deleteOrganisation, {timeout: 5000}).click();
-        cy.get(organisation.organisationInfo.enterPasswordToDelete).clear().type(data.user.password);
+        cy.get(organisation.organisationInfo.deleteOrganisation, { timeout: 5000 }).click();
+        cy.get(organisation.organisationInfo.enterPasswordToDelete)
+            .clear()
+            .type(data.user.password);
         cy.get(organisation.organisationInfo.yesDelete).click();
     })
 })

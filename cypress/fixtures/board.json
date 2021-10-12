@@ -34,6 +34,7 @@
         "scrum" : "ul[class='el-dropdown-menu vs-c-dropdown-plus-icon']> li:nth-child(1) > span[class='vs-c-task-modal-type-dropdown__item-name']",
         "confirmButton" : "button[class='el-button el-button--success el-button']",
         "deleteBoard" : "button[class='vs-c-btn vs-c-btn--warning vs-c-btn--spaced']",
+        "boardsModal" : ".vs-c-modal--features-button > .vs-c-btn",
         "archiveBoard" : "button[class='vs-c-btn vs-c-btn--success vs-c-btn--spaced']",
         "boardModalClose" : ".vs-c-modal--features-button > .vs-c-btn",
         "reopenBoard" : "button[class='vs-c-btn vs-c-btn--primary vs-c-btn--spaced vs-u-gap--left']",
@@ -41,5 +42,5 @@
         "uploadDragger" : "div[class='el-upload-dragger']",
         "cancelUpload" : "button[class='el-button el-button--warning el-button--button']",
         "saveLogo" : "button[class='el-button el-button--success el-button--button']"
-    }  
+    }
 }

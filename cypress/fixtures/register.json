@@ -15,9 +15,9 @@
     "regzenSignUp" : "button[class='vs-c-btn vs-c-btn--social-auth vs-c-btn--regzen']",
     "alreadyHaveAcc" : "a[class='vs-c-btn vs-c-btn--link']",
     "addFirstName" : "input[data-vv-as='first name']",
-    "addLastName" : "input[data-vv-as='last name']",
+    "addLastName" : "input[placeholder='Type last name']",
     "addCompanyName" : "input[placeholder='Type company name']",
-    "addOrganisationName" : "input[data-vv-as='organization name']",
+    "addOrganisationName" : "input[placeholder='Type organization name']",
     "finishRegistration" : ".vs-u-text--left > .vs-c-btn",
     "cancelRegistration" : "button[class='vs-c-btn vs-c-btn--danger vs-c-btn--spaced vs-u-font-weight-bold vs-c-btn-auth--top-gap vs-u-gap--top-sm']"
 }

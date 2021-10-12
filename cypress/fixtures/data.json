@@ -13,9 +13,11 @@
 
     "newUser" : {
         "name" : "Tamara",
-        "lastName" : "Ruzic",
-        "registerEmail" : "taki@mailinator.com",
-        "registerPass": "Test1234!"
+        "lastName" : "Karanovic",
+        "registerEmail" : "tama@mail.com",
+        "registerPass": "Test1234!",
+        "companyName" : "Bowl",
+        "numberOfUsers" : "10"
     },
     
     "newOrganisation" : {
@@ -31,6 +33,17 @@
         "boardDesc" : "This is a test description",
         "newTitle" : "Internet",
         "code" : "MMTK"
-    } 
+    },
+    
+    "newColumn" : {
+        "columnName" : "Closed"
+    },
+
+    "tasks" : {
+        "title" : "Create new task",
+        "titleSecond" : "Edit task",
+        "description" : "Move task to another column",
+        "comment" : "You do not suck."
+    }
 
 }
