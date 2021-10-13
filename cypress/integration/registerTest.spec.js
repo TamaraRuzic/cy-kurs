@@ -5,7 +5,7 @@ import sidebar from "../fixtures/sidebar.json";
 import loginPage from "../fixtures/login.json"
 
 describe('register test block', () => {
-    it.only('visit register page and select pricing plan', () => {
+    it('visit register page and select pricing plan', () => {
         cy.visit('https://cypress-api.vivifyscrum-stage.com/pricing');
         cy.get('.vsp-c-pricing-plan-list--annual > :nth-child(1)').scrollIntoView();
         cy.get(registerPage.starterPack)
@@ -63,7 +63,7 @@ describe('register test block', () => {
 
     });
 
-    it.only('register new user successfuly', () => {
+    it('register new user successfuly', () => {
         cy.get(registerPage.registerEmail)
             .clear()
             .type(data.newUser.registerEmail);

@@ -8,7 +8,7 @@
     },
     "editTask" : {
         "taskCard" : "div:nth-of-type(1) > .vs-c-task-list",
-        "firstTask" : "div[class='vs-c-columns'] > div:nth-child(1) [class='vs-c-item-card__footer']",
+        "firstTask" : "div[class='vs-c-columns'] > div:nth-child(2) [class='vs-c-item-card__footer']",
         "type" : "div[class='vs-c-task-type__icon']",
         "storyType" : "ul[class='el-dropdown-menu vs-c-dropdown-plus-icon vs-c-task-modal-type-dropdown'] > li:nth-child(1)",
         "improvementType" : "ul[class='el-dropdown-menu vs-c-dropdown-plus-icon vs-c-task-modal-type-dropdown'] > li:nth-child(2)",

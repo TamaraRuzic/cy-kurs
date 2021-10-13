@@ -35,7 +35,7 @@
         "checkboxTuesday" :"div[class='vs-u-pull-left-keep-right'] >div:nth-child(2) [type='checkbox']",
         "checkboxWed" : "div[class='vs-u-pull-left-keep-right'] >div:nth-child(3) [type='checkbox']",
         "checkboxThr" : "div[class='vs-u-pull-left-keep-right'] >div:nth-child(4) [type='checkbox']",
-        "checkboxFri" : "div[class='vs-u-pull-left-keep-right'] >div:nth-child(5) [type='checkbox']",
+        "checkboxFri" : ":nth-child(5) > .vs-c-checkbox-list-item > .vs-c-checkbox-list-item__check-container > .vs-c-checkbox > .vs-c-checkbox-check",
         "checkboxSat" : "div[class='vs-u-pull-left-keep-right'] >div:nth-child(6) [type='checkbox']",
         "checkboxSun" : "div[class='vs-u-pull-left-keep-right'] >div:nth-child(7) [type='checkbox']",
         "startDaydropdown" : "div[class='vs-c-settings-organization'] > div:nth-child(3) [class='vs-c-btn vs-c-btn--link']",

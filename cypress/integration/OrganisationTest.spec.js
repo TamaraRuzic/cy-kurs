@@ -33,7 +33,6 @@ describe('Organization test block', () => {
 
     it('select workdays and set calendar start day', () => {
         cy.get(organisation.organisationInfo.checkboxFri).click();
-        cy.get(organisation.organisationInfo.checkboxMonday).click();
         cy.get(organisation.organisationInfo.startDaydropdown).click();
         cy.get(organisation.organisationInfo.dropdownItemMon).click();
     });

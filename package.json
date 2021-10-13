@@ -4,7 +4,7 @@
   "description": "course",
   "main": "index.js",
   "scripts": {
-    "cypressOpen": "./node_modules/.bin/cypress open"
+    "cypressOpen": "cypress open"
   },
   "repository": {
     "type": "git",

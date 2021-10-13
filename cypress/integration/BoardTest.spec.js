@@ -34,7 +34,7 @@ describe('Board test block', () => {
         cy.get(board.addBoard.selectDropdownItem).click();
         cy.get(board.addBoard.enterBoardName).type(data.newBoard.boardName);
         cy.get(board.addBoard.nextButton).click();
-        cy.get(board.addBoard.kanbanType).click();
+        cy.get(board.addBoard.scrumType).click();
         cy.get(board.addBoard.nextButton).click();
         cy.get(board.addBoard.nextButton).click();
         cy.get(board.addBoard.nextButton).click();
@@ -96,6 +96,18 @@ describe('Board test block', () => {
         cy.get(task.taskCard.deleteModalButtons.yes).click();
     });
 
+    it('start sprint', () => {
+        cy.get(column.moreOptions).click();
+        cy.get(column.startSprint).click();
+        cy.get(column.spintModule.sprintDuration).click();
+        cy.get(column.spintModule.from).click();
+        cy.get(column.spintModule.to).click();
+        cy.get(column.spintModule.sprintGoal)
+        .click('')
+        .type(data.sprint.sprintGoal);
+        cy.get(column.spintModule.start).click()
+    });
+
     it('edit board basic info failed - title required', () => {
         cy.get(board.boardSidebar.settings, { timeout: 3000 }).click();
         cy.get(board.boardSettings.boardTitle).clear();
@@ -136,7 +148,7 @@ describe('Board test block', () => {
     });
 
     it('delete board', () => {
-        cy.get(board.boardSidebar.settings, { timeout: 3000 }).click();
+        cy.get(board.boardSidebar.scrumBoardSettings).click();
         cy.get(board.boardSettings.deleteBoard).click();
         cy.get(board.boardSettings.confirmButton).click();
         cy.get(board.boardSettings.boardsModal).click();

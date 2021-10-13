@@ -14,7 +14,7 @@
     "newUser" : {
         "name" : "Tamara",
         "lastName" : "Karanovic",
-        "registerEmail" : "tama@mail.com",
+        "registerEmail" : "tamaR@mail.com",
         "registerPass": "Test1234!",
         "companyName" : "Bowl",
         "numberOfUsers" : "10"
@@ -44,6 +44,10 @@
         "titleSecond" : "Edit task",
         "description" : "Move task to another column",
         "comment" : "You do not suck."
+    },
+
+    "sprint" : {
+        "sprintGoal" : "Learn Cy"
     }
 
 }

@@ -1,14 +1,22 @@
 {
     "add" : "div[class='vs-c-col vs-is-empty vs-add-column-btn-gap not-sortable'] [class='vs-add-new-task vs-c-btn vs-c-btn--themify-primary vs-c-btn--round vs-c-btn--sm']",
     "head" : ".el-input__inner",
-    "moreOptions" : "div[class='vs-c-columns'] > div:nth-child(3) [class='vs-u-actions']",
+    "moreOptions" : ":nth-child(2) > .vs-c-col__head > .vs-u-actions > .vs-c-dropdown-wrapper > .vs-c-btn",
     "delete" : "div[class='vs-c-columns'] > div:nth-child(3) [class='vs-c-dropdown active vs-c-board-column-options-dropdown'] > li:nth-child(1)",
     "deleteModalButtons" : {
         "yes" : "button[class='el-button el-button el-button--success el-button el-button--button']",
         "no" : "button[class='el-button el-button el-button--warning el-button el-button--button']"
     },
     "predefinedItems" : "div[class='vs-c-columns'] > div:nth-child(3) [class='vs-c-dropdown active vs-c-board-column-options-dropdown'] > li:nth-child(2)",
-    "startSprint" : "div[class='vs-c-columns'] > div:nth-child(3) [class='vs-c-dropdown active vs-c-board-column-options-dropdown'] > li:nth-child(3)",
+    "startSprint" : ":nth-child(3) > .vs-c-dropdown-item-column-limit",
+    "spintModule" : {
+        "sprintDuration" : "input[class='el-input__inner']",
+        "from" : "div[class='el-picker-panel__body'] > div[class='el-picker-panel__content el-date-range-picker__content is-left'] > table > tbody > tr:nth-child(5) > td:nth-child(1)",
+        "to" : "div[class='el-picker-panel__body'] > div[class='el-picker-panel__content el-date-range-picker__content is-left'] > table > tbody > tr:nth-child(5) > td:nth-child(5)",
+        "sprintGoal" : "textarea[class='el-textarea__inner']",
+        "cancel" : "button[class='el-button el-button el-button--warning el-button--button']",
+        "start" : "button[class='el-button el-button el-button--success el-button--button']"
+    },
     "exportSprint" : "div[class='vs-c-columns'] > div:nth-child(3) [class='vs-c-dropdown active vs-c-board-column-options-dropdown'] > li:nth-child(4)",
     "setColumnLimit" : "div[class='vs-c-columns'] > div:nth-child(3) [class='vs-c-dropdown active vs-c-board-column-options-dropdown'] > li:nth-child(5)"
 }

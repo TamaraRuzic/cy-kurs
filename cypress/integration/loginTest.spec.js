@@ -17,7 +17,9 @@ describe('first cypress block', () => {
 
    it('no email', () => {
       cy.get(loginPage.loginEmail).clear();
-      cy.get(loginPage.loginPass).type(data.user.password);
+      cy.get(loginPage.loginPass)
+         .clear()
+         .type(data.user.password);
       cy.get(loginPage.submitBtn).click();
    });
 
