@@ -1,0 +1,54 @@
+{
+    "newTask": {
+        "column" : ":nth-child(1) > .vs-c-task-list",
+        "addTask": "button[class='vs-add-new-task vs-c-btn vs-c-btn--themify-secondary vs-c-btn--round vs-c-btn--sm']",
+        "title": "textarea[type='textarea']",
+        "save": "div[class='vs-c-task-card-new__buttons'] > button:nth-child(2)",
+        "cancel": "div[class='vs-c-task-card-new__buttons'] > button:nth-child(1)"
+    },
+    "editTask" : {
+        "taskCard" : "div:nth-of-type(1) > .vs-c-task-list",
+        "firstTask" : "div[class='vs-c-columns'] > div:nth-child(2) [class='vs-c-item-card__footer']",
+        "type" : "div[class='vs-c-task-type__icon']",
+        "storyType" : "ul[class='el-dropdown-menu vs-c-dropdown-plus-icon vs-c-task-modal-type-dropdown'] > li:nth-child(1)",
+        "improvementType" : "ul[class='el-dropdown-menu vs-c-dropdown-plus-icon vs-c-task-modal-type-dropdown'] > li:nth-child(2)",
+        "bugType" : "ul[class='el-dropdown-menu vs-c-dropdown-plus-icon vs-c-task-modal-type-dropdown'] > li:nth-child(3)",
+        "taskType" : "ul[class='el-dropdown-menu vs-c-dropdown-plus-icon vs-c-task-modal-type-dropdown'] > li:nth-child(4)",
+        "noteType" : "ul[class='el-dropdown-menu vs-c-dropdown-plus-icon vs-c-task-modal-type-dropdown'] > li:nth-child(5)",
+        "ideaType" : "ul[class='el-dropdown-menu vs-c-dropdown-plus-icon vs-c-task-modal-type-dropdown'] > li:nth-child(6)",
+        "enterTitle" : "textarea[placeholder='Write a title. Use hashtag (#) to add Item details.']",
+        "title" : "h2[class='vs-c-task__title']",
+        "cancel" : "button[class='el-button el-button--text el-button--small']",
+        "save" : "button[class='el-button el-button--success el-button--small']",
+        "editDescription" : "div[title='Edit Description']",
+        "description" : "textarea[placeholder='Write a description...']",
+        "commentArea" : "textarea[placeholder='Write a comment...']",
+        "postComment" : "button[class='el-button el-button--success el-button--mini']",
+        "columnDropdown" : "div[class='el-dropdown-link vs-c-modal-status__text']",
+        "backlog" : "div[class='vs-c-dropdown active vs-c-dropdown-plus-icon vs-c-dropdown--above'] > li:nth-child(1)",
+        "sprint1" : "div[class='vs-c-dropdown active vs-c-dropdown-plus-icon vs-c-dropdown--above'] > li:nth-child(2)",
+        "sprint2" : "div[class='vs-c-dropdown active vs-c-dropdown-plus-icon vs-c-dropdown--above'] > li:nth-child(3)",
+        "sprintColumn" : "div[class='vs-u-text--right el-col el-col-24'] [name='sprint-backlog-column-info-dropdown']",
+        "toDo" : "div[class='vs-c-dropdown active vs-c-dropdown-plus-icon vs-c-column-dropdown__sprint-backlog'] > li:nth-child(1)",
+        "inProgress" : "div[class='vs-c-dropdown active vs-c-dropdown-plus-icon vs-c-column-dropdown__sprint-backlog'] > li:nth-child(2)",
+        "done" : "div[class='vs-c-dropdown active vs-c-dropdown-plus-icon vs-c-column-dropdown__sprint-backlog'] > li:nth-child(3)",
+        "moreOptions" : "div[class='vs-c-item-share el-dropdown']",
+        "deleteTask" : "ul[class='el-dropdown-menu el-dropdown--modal-actions']>li:nth-child(1)",
+        "cloneTask" : "ul[class='el-dropdown-menu el-dropdown--modal-actions']>li:nth-child(2)",
+        "mirrorItemsToAnotherBoard" : "ul[class='el-dropdown-menu el-dropdown--modal-actions']>li:nth-child(3)",
+        "moveToTop" : "ul[class='el-dropdown-menu el-dropdown--modal-actions']>li:nth-child(4)",
+        "showRelatedItems" : "ul[class='el-dropdown-menu el-dropdown--modal-actions']>li:nth-child(5)",
+        "addPredefinedItem" : "ul[class='el-dropdown-menu el-dropdown--modal-actions']>li:nth-child(6)",
+        "moveToAnotherBoard" : "ul[class='el-dropdown-menu el-dropdown--modal-actions']>li:nth-child(7)",
+        "closeTaskModal" : "button[class='el-button vs-c-item-modal-close el-button--text']",
+        "kanbanDropdown" : ".el-dropdown > .el-dropdown-link"
+    },
+    "taskCard" : {
+        "moreOptions" : "div[title='More']",
+        "delete" : "div[class='vs-c-task-dropdown vs-c-task-dropdown-wrapper'] > div[class='vs-c-task-dropdown__body'] > a:nth-child(2)",
+        "deleteModalButtons" : {
+            "yes" : "button[class='el-button el-button--success']",
+            "no" : "button[class='el-button el-button--warning']"
+        }
+    }
+}

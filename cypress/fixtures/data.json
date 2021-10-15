@@ -1,0 +1,53 @@
+{
+    "user" : {
+        "email" : "tamara.ruzic@vivify.com",
+        "password" : "Test1234!"
+    },
+
+    "invalidUser" : {
+        "invalidEmail" : "tamara65@vivify1",
+        "noMonkeyEmail" : "tamra.ruzicvivifyideas.com",
+        "invalidPassword" : "Test1",
+        "shortPass" : "tam"
+    },
+
+    "newUser" : {
+        "name" : "Tamara",
+        "lastName" : "Karanovic",
+        "registerEmail" : "tamama@mail.com",
+        "registerPass": "Test1234!",
+        "companyName" : "Bowl",
+        "numberOfUsers" : "10"
+    },
+    
+    "newOrganisation" : {
+        "organisationName" : "Dummy name",
+        "newOrganisationName" : "Fun",
+        "daysPerYear" : "25",
+        "monthsRequiredForVacation" : "6",
+        "additionalVacationDays" : "10"
+    },
+
+    "newBoard" : {
+        "boardName" : "It Crowd",
+        "boardDesc" : "This is a test description",
+        "newTitle" : "Internet",
+        "code" : "MMTK"
+    },
+    
+    "newColumn" : {
+        "columnName" : "Closed"
+    },
+
+    "tasks" : {
+        "title" : "Create new task",
+        "titleSecond" : "Edit task",
+        "description" : "Move task to another column",
+        "comment" : "You do not suck."
+    },
+
+    "sprint" : {
+        "sprintGoal" : "Learn Cy"
+    }
+
+}

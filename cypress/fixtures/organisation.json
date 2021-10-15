@@ -1,0 +1,61 @@
+{
+    "addingOrganisation" : {
+        "addNewOrganisation" : "div[class='vs-c-my-organization vs-c-my-organization--add-new not-sortable']",
+        "organisationName" : "input[placeholder='Enter name...']",
+        "cancelButton" : "div[class='dialog-footer'] > button:nth-child(2)",
+        "nextButton" : "div[class='dialog-footer'] > button:nth-child(3) ",
+        "uploadDragger" : "div[class='el-upload-dragger']",
+        "previous": "div[class='dialog-footer'] > button:nth-child(2)",
+        "create" : "div[class='dialog-footer'] > button:nth-child(3)",
+        "okBtn" : ".vs-c-modal--features-button > .vs-c-btn"
+    },
+    "organisationCard" : {
+        "initialOrganisation" : "div[class='vs-c-my-organizations-item-wrapper'] > div:nth-child(1)",
+        "editOrganisation" : "svg[class='vs-c-icon vs-c-icon--edit']",
+        "archiveOrganisation" : "span[title='Archive Organization'] > svg:nth-child(1)",
+        "unarchiveBoard" : ":nth-child(3) > :nth-child(1) > .vs-c-boards-item__content",
+        "submitActiv" : "button[class='el-button el-button--success el-button']",
+        "newProject" : "li[class='vs-c-my-organization__project vs-c-my-organization__project-new']",
+        "addNewProject" : "li[class='vs-c-my-organization__project vs-c-my-organization__project-new']",
+        "addNewBoard" : "li[class='vs-c-my-organization__board vs-c-my-organization__board-new']"
+    },
+    "organisationSidebar" : {
+        "boards" : "div[class='vs-l-project__menu'] > ul[class='vs-c-list'] > li:nth-child(1)",
+        "projects": "div[class='vs-l-project__menu'] > ul[class='vs-c-list'] > li:nth-child(2)",
+        "invoicing" : "div[class='vs-l-project__menu'] > ul[class='vs-c-list'] > li:nth-child(3)",
+        "clients" : "div[class='vs-l-project__menu'] > ul[class='vs-c-list'] > li:nth-child(4)",
+        "worklogs" : "div[class='vs-l-project__menu'] > ul[class='vs-c-list'] > li:nth-child(5)",
+        "teamManagement" : "div[class='vs-l-project__menu'] > ul[class='vs-c-list'] > li:nth-child(6)",
+        "reports" : "div[class='vs-l-project__menu'] > ul[class='vs-c-list'] > li:nth-child(7)",
+        "settings" : "div[class='vs-l-project__menu'] > ul[class='vs-c-list'] > li:nth-child(8)"
+    },
+    "organisationInfo" : {
+        "organisationName" : "input[placeholder='Enter name...']",
+        "checkboxMonday" : "div[class='vs-u-pull-left-keep-right'] >div:nth-child(1) [type='checkbox']",
+        "checkboxTuesday" :"div[class='vs-u-pull-left-keep-right'] >div:nth-child(2) [type='checkbox']",
+        "checkboxWed" : "div[class='vs-u-pull-left-keep-right'] >div:nth-child(3) [type='checkbox']",
+        "checkboxThr" : "div[class='vs-u-pull-left-keep-right'] >div:nth-child(4) [type='checkbox']",
+        "checkboxFri" : ":nth-child(5) > .vs-c-checkbox-list-item > .vs-c-checkbox-list-item__check-container > .vs-c-checkbox > .vs-c-checkbox-check",
+        "checkboxSat" : "div[class='vs-u-pull-left-keep-right'] >div:nth-child(6) [type='checkbox']",
+        "checkboxSun" : "div[class='vs-u-pull-left-keep-right'] >div:nth-child(7) [type='checkbox']",
+        "startDaydropdown" : "div[class='vs-c-settings-organization'] > div:nth-child(3) [class='vs-c-btn vs-c-btn--link']",
+        "dropdownItemMon" : "ul[class='el-dropdown-menu vs-c-users-stats-dropdown'] > li:nth-child(1)",
+        "dropdownItemSat" : "ul[class='el-dropdown-menu vs-c-users-stats-dropdown'] > li:nth-child(2)",
+        "dropdownItemSun" : "ul[class='el-dropdown-menu vs-c-users-stats-dropdown'] > li:nth-child(1)",
+        "vacationDays" : "input[name='vacationDays']",
+        "workingMonths" : "input[name='numOfWorkingMonthsForAdditionalDays']",
+        "additionalVacation" : "input[name='additionalVacationDays']",
+        "periodForUnusedVacation" : "input[placeholder='Select acation days expiration date...']",
+        "middleOfNextYear" : "div[class='el-select-dropdown__wrap el-scrollbar__wrap el-scrollbar__wrap--hidden-default']> ul > li:nth-child(3)",
+        "updateNameBtn" : ".vs-c-settings-section-form > .el-form > .vs-u-position-relative > .vs-u-text--left > .vs-c-btn",
+        "updateVacation" : "button[class='vs-c-btn vs-c-btn--primary vs-c-btn--spaced vs-u-font-weight-bold vs-c-btn-auth--top-gap']",
+        "ownershipDropdown" : "div[class='vs-c-settings-organization'] > div:nth-child(6) [class='vs-c-dropdown-underline el-dropdown']",
+        "selectOwner" : "ul[class='el-dropdown-menu vs-c-dropdown-plus-icon'] > li:nth-child(1)",
+        "archive" : "button[class='vs-c-btn vs-c-btn--success vs-c-btn--spaced']",
+        "deleteOrganisation" : "button[class='vs-c-btn vs-c-btn--warning vs-c-btn--spaced']",
+        "enterPasswordToDelete" : "input[type='password']",
+        "noDelete" : "button[class='el-button el-button--warning el-button']",
+        "yesDelete" : "button[class='el-button el-button--success el-button']",
+        "closeDeleteModal" : "button[class='el-button el-button el-button--text el-button--mini el-button--default el-button--mini']"
+    }
+}

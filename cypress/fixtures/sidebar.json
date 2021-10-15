@@ -5,10 +5,14 @@
     "addBoard" : "div[class='el-tooltip__popper is-light el-tooltip-sidebar'] > div[class='vs-c-tooltip-active-sprints'] > ul[class='vs-c-list'] > li:nth-child(2)",
     "importBoardFrom" : "div[class='el-tooltip__popper is-light el-tooltip-sidebar'] > div[class='vs-c-tooltip-active-sprints'] > ul[class='vs-c-list'] > li:nth-child(3)",
     "showOrganisation" : "button[class='vs-c-btn vs-c-btn--link vs-c-btn--sm vs-c-list__caret collapsed']",
-    "firstBoard" : "a[href='/boards/97904']",
+    "myOrganisation" : "div[class='vb-content'] [class='vs-c-list__btn router-link-exact-active router-link-active active']",
+    "firstBoard" : "ul[class='vs-c-list vs-c-list--boards'] > li:nth-child(1)",
     "secondBoard" : "a[href='/boards/100602']",
     "starred" : "a[href='/boards/97904'] > div > svg[class='vs-c-icon']",
     "addNewBottom" : "div[class='vs-c-list__btn vs-c-list-btn--add-new el-tooltip']",
     "addNewBoard" : "div[class='el-tooltip__popper is-light el-tooltip-sidebar'] > div[class='vs-c-tooltip-active-sprints'] > ul[class='vs-c-list'] > li:nth-child(1) > a[css='1']",
-    "myUser" : "span[class='vs-c-user-name']"
+    "myUser" : "span[class='vs-c-user-name']",
+    "user" : "div[class='vs-l-sidebar__user']",
+    "profile" : ":nth-child(4) > [effect='dark'] > :nth-child(2) > .vs-c-site-logo",
+    "logout" : "button[class='vs-c-btn vs-c-btn--link vs-c-btn--danger']"
 }
