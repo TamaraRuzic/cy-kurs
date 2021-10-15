@@ -94,5 +94,5 @@ describe('Organization test block', () => {
             .clear()
             .type(data.user.password);
         cy.get(organisation.organisationInfo.yesDelete).click();
-    })
+    });
 })

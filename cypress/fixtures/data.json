@@ -14,7 +14,7 @@
     "newUser" : {
         "name" : "Tamara",
         "lastName" : "Karanovic",
-        "registerEmail" : "tamaR@mail.com",
+        "registerEmail" : "tamama@mail.com",
         "registerPass": "Test1234!",
         "companyName" : "Bowl",
         "numberOfUsers" : "10"

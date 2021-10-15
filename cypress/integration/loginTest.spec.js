@@ -70,9 +70,10 @@ describe('first cypress block', () => {
    });
 
    it('logout', () => {
-      cy.wait(3000);
+      cy.intercept('GET', 'https://cypress-api.vivifyscrum-stage.com/api/v2/my-organizations').as('homePage')
+      cy.wait('@homePage');
       cy.get(sidebar.myUser, { timeout: 5000 }).click();
       cy.get(sidebar.profile, { timeout: 3000 }).click();
       cy.get(sidebar.logout, { timeout: 3000 }).click();
-   })
+   });
 })

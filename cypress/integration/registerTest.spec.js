@@ -81,7 +81,8 @@ describe('register test block', () => {
         cy.get(loginPage.loginEmail).type(data.newUser.registerEmail);
         cy.get(loginPage.loginPass).type(data.newUser.registerPass);
         cy.get(loginPage.submitBtn).click();
-        cy.wait(5000);
+        cy.intercept('GET', 'https://cypress-api.vivifyscrum-stage.com/api/v2/my-organizations').as('homePage')
+        cy.wait('@homePage');
         cy.get(registerPage.addFirstName).type(data.newUser.name);
         cy.get(registerPage.addLastName).type(data.newUser.lastName);
         cy.get(registerPage.addCompanyName).type(data.newUser.companyName);

@@ -44,17 +44,17 @@ describe('Board test block', () => {
     it('create a new column', () => {
         cy.get(column.add).click();
         cy.get(column.head)
-        .type(data.newColumn.columnName)
-        .type('{enter}');
+            .type(data.newColumn.columnName)
+            .type('{enter}');
     });
 
     it('create a new task', () => {
         cy.get(task.newTask.addTask)
-        .invoke('show')
-        .click();
+            .invoke('show')
+            .click();
         cy.get(task.newTask.title)
-        .type(data.tasks.title)
-        .type('{enter}');
+            .type(data.tasks.title)
+            .type('{enter}');
     });
 
     it('edit task type', () => {
@@ -65,10 +65,10 @@ describe('Board test block', () => {
 
     it('edit task title', () => {
         cy.get(task.editTask.title)
-        .click('topRight');
+            .click('topRight');
         cy.get(task.editTask.enterTitle)
-        .clear()
-        .type(data.tasks.titleSecond);
+            .clear()
+            .type(data.tasks.titleSecond);
         cy.get(task.editTask.save).click();
     });
 
@@ -82,8 +82,8 @@ describe('Board test block', () => {
         cy.get(task.editTask.columnDropdown).click();
         cy.get(task.editTask.sprint1).click();
         cy.get(task.editTask.commentArea)
-        .click()
-        .type(data.tasks.comment);
+            .click()
+            .type(data.tasks.comment);
         cy.get(task.editTask.postComment).click();
         cy.get(task.editTask.closeTaskModal).click();
     });
@@ -91,7 +91,7 @@ describe('Board test block', () => {
     it('delete task', () => {
         cy.get(task.editTask.firstTask).trigger('mouseover');
         cy.get(task.taskCard.moreOptions)
-        .click({force : true});
+            .click({ force: true });
         cy.get(task.taskCard.delete).click();
         cy.get(task.taskCard.deleteModalButtons.yes).click();
     });
@@ -103,9 +103,9 @@ describe('Board test block', () => {
         cy.get(column.spintModule.from).click();
         cy.get(column.spintModule.to).click();
         cy.get(column.spintModule.sprintGoal)
-        .click('')
-        .type(data.sprint.sprintGoal);
-        cy.get(column.spintModule.start).click()
+            .click()
+            .type(data.sprint.sprintGoal);
+        cy.get(column.spintModule.start).click();
     });
 
     it('edit board basic info failed - title required', () => {
