@@ -19,5 +19,8 @@
     "addCompanyName" : "input[placeholder='Type company name']",
     "addOrganisationName" : "input[placeholder='Type organization name']",
     "finishRegistration" : ".vs-u-text--left > .vs-c-btn",
-    "cancelRegistration" : "button[class='vs-c-btn vs-c-btn--danger vs-c-btn--spaced vs-u-font-weight-bold vs-c-btn-auth--top-gap vs-u-gap--top-sm']"
+    "cancelRegistration" : "button[class='vs-c-btn vs-c-btn--danger vs-c-btn--spaced vs-u-font-weight-bold vs-c-btn-auth--top-gap vs-u-gap--top-sm']",
+    "errorMessage" : ".el-message__group > p",
+    "emailRequired" : ":nth-child(1) > .vs-c-form-item__error-wrapper > .el-form-item__error",
+    "passwordRequierd" : ":nth-child(2) > .vs-c-form-item__error-wrapper > .el-form-item__error"
 }
