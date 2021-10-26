@@ -106,7 +106,9 @@ describe('Organization test block', () => {
 
     it('cancel delete organisation', () => {
         cy.get(organisation.organisationInfo.deleteOrganisation).click();
-        cy.get(organisation.organisationInfo.enterPasswordToDelete).type(data.user.password);
+        cy.get(organisation.organisationInfo.enterPasswordToDelete)
+            .type(data.user.password)
+            .should('have.value',data.user.password);
         cy.get(organisation.organisationInfo.noDelete).click();
         cy.url().should('include','settings');
     });
@@ -119,7 +121,9 @@ describe('Organization test block', () => {
 
     it('delete organisation failed due to wrong password', () => {
         cy.get(organisation.organisationInfo.deleteOrganisation).click();
-        cy.get(organisation.organisationInfo.enterPasswordToDelete).type(data.invalidUser.invalidPassword);
+        cy.get(organisation.organisationInfo.enterPasswordToDelete)
+            .type(data.invalidUser.invalidPassword)
+            .should('have.value', data.invalidUser.invalidPassword);
         cy.get(organisation.organisationInfo.yesDelete).click();
         cy.get(organisation.organisationInfo.closeDeleteModal).click();
     });
