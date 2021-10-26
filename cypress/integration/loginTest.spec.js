@@ -3,7 +3,7 @@ import loginPage from "../fixtures/login.json";
 import data from "../fixtures/data.json";
 import sidebar from "../fixtures/sidebar.json";
 
-describe('first cypress block', () => {
+describe('login block', () => {
 
    beforeEach('visit vivify scrym', () => {
       cy.visit('/', { timeout: 30000 });
@@ -104,7 +104,7 @@ describe('first cypress block', () => {
       cy.url().should('include','/my-organizations')
    });
 
-   it.only('logout', () => {
+   it('logout', () => {
       cy.get(loginPage.loginEmail)
          .type(data.user.email)
          .should('have.value', data.user.email);

@@ -3,38 +3,68 @@ import loginPage from "../fixtures/login.json";
 import data from "../fixtures/data.json"
 
 describe('Organization test block', () => {
-    it('login', () => {
+    beforeEach('login', () => {
         cy.visit('/');
-        cy.get(loginPage.loginEmail).clear().type(data.user.email);
-        cy.get(loginPage.loginPass).clear().type(data.user.password);
+        cy.get(loginPage.loginEmail)
+            .clear()
+            .type(data.user.email)
+            .should('have.value', data.user.email);
+        cy.get(loginPage.loginPass)
+            .clear()
+            .type(data.user.password)
+            .should('have.value', data.user.password);
         cy.get(loginPage.submitBtn).click();
-    });
-
-    it('create organization', () => {
         cy.get(organisation.addingOrganisation.addNewOrganisation, { timeout: 5000 }).click();
-        cy.get(organisation.addingOrganisation.organisationName).type(data.newOrganisation.organisationName);
-        cy.get(organisation.addingOrganisation.nextButton, { timeout: 3000 }).click();
+        cy.get(organisation.addingOrganisation.organisationName)
+            .type(data.newOrganisation.organisationName)
+            .should('have.value', data.newOrganisation.organisationName);
+        cy.get(organisation.addingOrganisation.nextButton, { timeout: 3000 })
+            .click()
+            .should('be.enabled');
         cy.get(organisation.addingOrganisation.nextButton, { timeout: 3000 }).click();
         cy.get(organisation.addingOrganisation.okBtn).click();
+        cy.get(organisation.organisationSidebar.settings).click();
+    });
 
+    afterEach('delete organisation', () => {
+        cy.get(organisation.organisationInfo.deleteOrganisation, { timeout: 5000 }).click();
+        cy.get(organisation.organisationInfo.enterPasswordToDelete)
+            .clear()
+            .type(data.user.password)
+            .should('have.value', data.user.password);
+        cy.get(organisation.organisationInfo.yesDelete)
+            .click()
+            .should('be.enabled');
+        cy.url().should('include','my-organizations');
     });
 
     it('Edit organization name failed', () => {
-        cy.get(organisation.organisationSidebar.settings).click();
-        cy.get(organisation.organisationInfo.organisationName).clear();
+        cy.get(organisation.organisationInfo.organisationName)
+            .clear()
+            .should('have.value', '');
         cy.get(organisation.organisationInfo.updateNameBtn).click();
+        
     });
 
     it('Edit organization name', () => {
-        cy.get(organisation.organisationSidebar.settings).click();
-        cy.get(organisation.organisationInfo.organisationName).type(data.newOrganisation.newOrganisationName);
+        cy.get(organisation.organisationInfo.organisationName)
+            .clear()
+            .type(data.newOrganisation.newOrganisationName)
+            .should('have.value',data.newOrganisation.newOrganisationName);
         cy.get(organisation.organisationInfo.updateNameBtn).click();
+        cy.contains('Successfully updated the Organization name')
+            .should('be.visible');
     });
 
-    it('select workdays and set calendar start day', () => {
-        cy.get(organisation.organisationInfo.checkboxFri).click();
+    it.only('select workdays and set calendar start day', () => {
+        cy.get(organisation.organisationInfo.checkboxFri)
+            .click()
+            .should('not.be.checked');
         cy.get(organisation.organisationInfo.startDaydropdown).click();
-        cy.get(organisation.organisationInfo.dropdownItemMon).click();
+        cy.get(organisation.organisationInfo.dropdownItemMon)
+            .click()
+            .should('be.visible')
+            .and('have.text','Monday');
     });
 
     it('vacation days per year failed', () => {
@@ -56,12 +86,16 @@ describe('Organization test block', () => {
     it('working months, additional vacation days granted and unused vacation', () => {
         cy.get(organisation.organisationInfo.workingMonths)
             .clear()
-            .type(data.newOrganisation.monthsRequiredForVacation);
+            .type(data.newOrganisation.monthsRequiredForVacation)
+            .should('have.value', data.newOrganisation.monthsRequiredForVacation);
         cy.get(organisation.organisationInfo.additionalVacation)
             .clear()
-            .type(data.newOrganisation.additionalVacationDays);
+            .type(data.newOrganisation.additionalVacationDays)
+            .should('have.value', organisation.organisationInfo.additionalVacation);
         cy.get(organisation.organisationInfo.periodForUnusedVacation).click();
-        cy.get(organisation.organisationInfo.middleOfNextYear).click();
+        cy.get(organisation.organisationInfo.middleOfNextYear)
+            .click()
+            .should('be.visible');
         cy.get(organisation.organisationInfo.updateVacation).click();
     });
 
@@ -74,11 +108,13 @@ describe('Organization test block', () => {
         cy.get(organisation.organisationInfo.deleteOrganisation).click();
         cy.get(organisation.organisationInfo.enterPasswordToDelete).type(data.user.password);
         cy.get(organisation.organisationInfo.noDelete).click();
+        cy.url().should('include','settings');
     });
 
     it('close delete modal', () => {
         cy.get(organisation.organisationInfo.deleteOrganisation).click();
         cy.get(organisation.organisationInfo.closeDeleteModal).click();
+        cy.url().should('include','settings');
     });
 
     it('delete organisation failed due to wrong password', () => {
@@ -88,11 +124,4 @@ describe('Organization test block', () => {
         cy.get(organisation.organisationInfo.closeDeleteModal).click();
     });
 
-    it('delete organisation', () => {
-        cy.get(organisation.organisationInfo.deleteOrganisation, { timeout: 5000 }).click();
-        cy.get(organisation.organisationInfo.enterPasswordToDelete)
-            .clear()
-            .type(data.user.password);
-        cy.get(organisation.organisationInfo.yesDelete).click();
-    });
 })
