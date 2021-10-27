@@ -56,7 +56,7 @@ describe('Organization test block', () => {
             .should('be.visible');
     });
 
-    it.only('select workdays and set calendar start day', () => {
+    it('select workdays and set calendar start day', () => {
         cy.get(organisation.organisationInfo.checkboxFri)
             .click()
             .should('not.be.checked');
@@ -68,19 +68,33 @@ describe('Organization test block', () => {
     });
 
     it('vacation days per year failed', () => {
-        cy.get(organisation.organisationInfo.vacationDays).clear();
+        cy.get(organisation.organisationInfo.vacationDays)
+            .clear()
+            .should('be.empty');
+        cy.get(organisation.organisationInfo.vacationDaysRequired)
+            .should('be.visible');
         cy.get(organisation.organisationInfo.updateVacation).click();
     });
 
     it('vacation days per year', () => {
-        cy.get(organisation.organisationInfo.vacationDays).type(data.newOrganisation.daysPerYear);
+        cy.get(organisation.organisationInfo.vacationDays)
+            .clear()
+            .type(data.newOrganisation.daysPerYear)
+            .should('have.value', data.newOrganisation.daysPerYear);
         cy.get(organisation.organisationInfo.updateVacation).click();
+        cy.contains('Successfully updated vacation days')
+            .should('be.visible');
     });
 
     it('working months required for vacation failed', () => {
         cy.get(organisation.organisationInfo.workingMonths).clear();
+        cy.get(organisation.organisationInfo.workingMonthsRequired)
+            .should('be.visible');
         cy.get(organisation.organisationInfo.additionalVacation).clear();
+        cy.get(organisation.organisationInfo.additionalDaysRequired)
+            .should('be.visible')
         cy.get(organisation.organisationInfo.updateVacation).click();
+        
     });
 
     it('working months, additional vacation days granted and unused vacation', () => {
@@ -117,15 +131,20 @@ describe('Organization test block', () => {
         cy.get(organisation.organisationInfo.deleteOrganisation).click();
         cy.get(organisation.organisationInfo.closeDeleteModal).click();
         cy.url().should('include','settings');
+        cy.get(organisation.organisationInfo.deleteOrganisation)
+            .should('be.visible');
     });
 
-    it('delete organisation failed due to wrong password', () => {
+    it.skip('delete organisation failed due to wrong password', () => {
         cy.get(organisation.organisationInfo.deleteOrganisation).click();
         cy.get(organisation.organisationInfo.enterPasswordToDelete)
             .type(data.invalidUser.invalidPassword)
             .should('have.value', data.invalidUser.invalidPassword);
         cy.get(organisation.organisationInfo.yesDelete).click();
         cy.get(organisation.organisationInfo.closeDeleteModal).click();
+        cy.contains('The password is incorrect.', {timeout : 4000})
+            .should('exists')
+            .and('be.visible');
     });
 
 })
