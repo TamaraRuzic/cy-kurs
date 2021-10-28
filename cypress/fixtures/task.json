@@ -49,6 +49,7 @@
         "deleteModalButtons" : {
             "yes" : "button[class='el-button el-button--success']",
             "no" : "button[class='el-button el-button--warning']"
-        }
+        },
+        "newTaskCard" : "div[class='vs-c-task-card vs-c-task-card-new vs-u-task--story']"
     }
 }

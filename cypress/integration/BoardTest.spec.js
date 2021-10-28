@@ -12,60 +12,91 @@ describe('Board test block', () => {
         cy.visit('/');
         cy.get(loginPage.loginEmail)
             .clear()
-            .type(data.user.email);
+            .type(data.user.email)
+            .should('have.value', data.user.email);
         cy.get(loginPage.loginPass)
             .clear()
-            .type(data.user.password);
+            .type(data.user.password)
+            .should('have.value', data.user.password);
         cy.get(loginPage.submitBtn).click();
+        cy.url().should('include','my-organizations');
         cy.get(sidebar.addNewTop).click();
         cy.get(sidebar.addBoard).click();
+        cy.get(board.addBoard.boardAddModal)
+            .should('be.visible');
         cy.get(board.addBoard.selectOrganisation).click();
-        cy.get(board.addBoard.selectDropdownItem).click();
-        cy.get(board.addBoard.enterBoardName).type(data.newBoard.boardName);
-        cy.get(board.addBoard.nextButton).click();
+        cy.get(board.addBoard.selectDropdownItem)
+            .click();
+        cy.get(board.addBoard.enterBoardName)
+            .type(data.newBoard.boardName)
+            .should('have.value', data.newBoard.boardName);
+        cy.get(board.addBoard.nextButton)
+            .click();
         cy.get(board.addBoard.scrumType).click();
-        cy.get(board.addBoard.nextButton).click();
-        cy.get(board.addBoard.nextButton).click();
-        cy.get(board.addBoard.nextButton).click();
-        cy.get(board.addBoard.nextButton).click();
+        cy.get(board.addBoard.nextButton)
+            .click();
+        cy.get(board.addBoard.nextButton)
+            .click();
+        cy.get(board.addBoard.nextButton)
+            .click();
+        cy.get(board.addBoard.nextButton)
+            .click();
     });
 
     afterEach('delete board', () => {
         cy.get('[data-cy=board-configuration] > span > div > .vs-c-site-logo').click();
         cy.get(board.boardSettings.deleteBoard).click();
+        cy.get(board.boardSettings.confirmationModal)
+            .should('be.visible');
         cy.get(board.boardSettings.confirmButton).click();
         cy.get(board.boardSettings.boardsModal).click();
+        cy.url().should('include', 'organizations')
     });
 
     it('cancel create board', () => {
         cy.get(sidebar.addNewTop).click();
         cy.get(sidebar.addBoard).click();
+        cy.get(board.addBoard.boardAddModal)
+            .should('be.visible');
         cy.get(board.addBoard.selectOrganisation).click();
-        cy.get(board.addBoard.selectDropdownItem).click();
-        cy.get(board.addBoard.enterBoardName).type(data.newBoard.boardName);
-        cy.get(board.addBoard.closeModalBtn).click();
+        cy.get(board.addBoard.selectDropdownItem)
+            .click();
+        cy.get(board.addBoard.enterBoardName)
+            .type(data.newBoard.boardName)
+            .should('have.value', data.newBoard.boardName);
+        cy.get(board.addBoard.closeModalBtn)
+            .click();
+        cy.get(board.addBoard.boardAddModal)
+            .should('not.exist');
     });
 
     it('create a new column', () => {
         cy.get(column.add).click();
         cy.get(column.head)
-            .type(data.newColumn.columnName)
-            .type('{enter}');
+            .type(data.newColumn.columnName, '{enter}')
+            .should('have.value', data.newColumn.columnName);
+        cy.get(board.addBoard.newColumn)
+            .should('exist');
     });
 
     it('create a new task', () => {
         cy.get(task.newTask.addTask)
             .invoke('show')
             .click();
+        cy.get(task.taskCard.newTaskCard)
+            .should('be.visible');
         cy.get(task.newTask.title)
-            .type(data.tasks.title)
-            .type('{enter}');
+            .type(data.tasks.title, '{enter}')
+            .should('have.value', data.tasks.title);
     });
 
-    it('edit task type', () => {
+    it.only('edit task type', () => {
         cy.get('.vs-u-padding--sm').click();
         cy.get(task.editTask.type).click();
-        cy.get(task.editTask.taskType).click();
+        cy.get(task.editTask.taskType)
+        .click();
+        // cy.get('button[name="itemType"]>span')
+        //     .should('have.text', '\n Task')
         cy.get(task.editTask.closeTaskModal).click();
     })
 
