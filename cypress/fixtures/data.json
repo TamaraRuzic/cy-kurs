@@ -6,7 +6,7 @@
 
     "invalidUser" : {
         "invalidEmail" : "tamara65@vivify1",
-        "noMonkeyEmail" : "tamra.ruzicvivifyideas.com",
+        "noMonkeyEmail" : "tamra.ruzic@vivifyideas.com",
         "invalidPassword" : "Test1",
         "shortPass" : "tam"
     },
@@ -14,7 +14,7 @@
     "newUser" : {
         "name" : "Tamara",
         "lastName" : "Karanovic",
-        "registerEmail" : "tamama@mail.com",
+        "registerEmail" : "taaaki@mail.com",
         "registerPass": "Test1234!",
         "companyName" : "Bowl",
         "numberOfUsers" : "10"

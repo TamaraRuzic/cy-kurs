@@ -17,7 +17,7 @@
         "noteType" : "ul[class='el-dropdown-menu vs-c-dropdown-plus-icon vs-c-task-modal-type-dropdown'] > li:nth-child(5)",
         "ideaType" : "ul[class='el-dropdown-menu vs-c-dropdown-plus-icon vs-c-task-modal-type-dropdown'] > li:nth-child(6)",
         "enterTitle" : "textarea[placeholder='Write a title. Use hashtag (#) to add Item details.']",
-        "title" : "h2[class='vs-c-task__title']",
+        "title" : ".vs-c-task__title > .vue-simple-markdown",
         "cancel" : "button[class='el-button el-button--text el-button--small']",
         "save" : "button[class='el-button el-button--success el-button--small']",
         "editDescription" : "div[title='Edit Description']",
@@ -49,6 +49,7 @@
         "deleteModalButtons" : {
             "yes" : "button[class='el-button el-button--success']",
             "no" : "button[class='el-button el-button--warning']"
-        }
+        },
+        "newTaskCard" : "div[class='vs-c-task-card vs-c-task-card-new vs-u-task--story']"
     }
 }

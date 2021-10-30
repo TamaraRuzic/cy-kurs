@@ -9,5 +9,8 @@
     "tweeterSignUp" : "button[class='vs-c-btn vs-c-btn--social-auth vs-c-btn--tw']",
     "regzenSignUp" : "button[class='vs-c-btn vs-c-btn--social-auth vs-c-btn--regzen']",
     "alreadyHaveAcc" : "a[class='vs-c-btn vs-c-btn--link']",
-    "newAccount" : "a[class='vs-u-font-bold vs-c-auth-modal__bottom-text-main vs-u-text--uppercase']"
+    "newAccount" : "a[class='vs-u-font-bold vs-c-auth-modal__bottom-text-main vs-u-text--uppercase']",
+    "emailRequired" : ":nth-child(1) > .vs-c-form-item__error-wrapper > .el-form-item__error",
+    "passwordRequierd" : ":nth-child(2) > .vs-c-form-item__error-wrapper > .el-form-item__error",
+    "errorMsg" : "span[class='el-form-item__error']"
 }

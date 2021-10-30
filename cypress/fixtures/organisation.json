@@ -56,6 +56,10 @@
         "enterPasswordToDelete" : "input[type='password']",
         "noDelete" : "button[class='el-button el-button--warning el-button']",
         "yesDelete" : "button[class='el-button el-button--success el-button']",
-        "closeDeleteModal" : "button[class='el-button el-button el-button--text el-button--mini el-button--default el-button--mini']"
+        "closeDeleteModal" : "button[class='el-button el-button el-button--text el-button--mini el-button--default el-button--mini']",
+        "nameRequired" : ".vs-c-settings-section-form > .el-form > .el-form-item > .vs-c-form-item__error-wrapper > .el-form-item__error",
+        "vacationDaysRequired" : ".vs-c-config-vacation-days > .el-form > :nth-child(1) > .vs-c-form-item__error-wrapper > .el-form-item__error",
+        "workingMonthsRequired" : ".vs-c-config-vacation-days > .el-form > :nth-child(2) > .vs-c-form-item__error-wrapper > .el-form-item__error",
+        "additionalDaysRequired" : ".vs-c-config-vacation-days > .el-form > :nth-child(3) > .vs-c-form-item__error-wrapper > .el-form-item__error"
     }
 }

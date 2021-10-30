@@ -1,5 +1,6 @@
 {
     "addBoard" : {
+        "boardAddModal" : "div[class='vs-c-modal vs-c-modal--starter vs-c-modal--create-board']",
         "addNewBoard" : "div[class='vs-c-boards-item__header--add-new']",
         "selectOrganisation" : "div[class='el-select vs-c-new-board-select']",
         "selectDropdownItem" : ".el-scrollbar__view > :nth-child(1)",
@@ -9,7 +10,8 @@
         "scrumType" : "span[name='type_scrum']",
         "kanbanType" : "span[name='type_kanban']",
         "uploadLogo" : "svg[slot='dropdown-button']",
-        "closeModalBtn" : "button[class='el-button vs-c-close-modal el-button--text el-button--small']"
+        "closeModalBtn" : "button[class='el-button vs-c-close-modal el-button--text el-button--small']",
+        "newColumn" : ":nth-child(3) > .vs-c-task-list"
     },
     "boardSidebar" : {
         "productBacklog" : "a[class='vs-c-site-logo router-link-exact-active router-link-active']",
@@ -42,6 +44,7 @@
         "boardAvatarUpload" : "div[class='vs-c-img--avatar vs-c-img--board-avatar-lg']",
         "uploadDragger" : "div[class='el-upload-dragger']",
         "cancelUpload" : "button[class='el-button el-button--warning el-button--button']",
-        "saveLogo" : "button[class='el-button el-button--success el-button--button']"
+        "saveLogo" : "button[class='el-button el-button--success el-button--button']",
+        "confirmationModal" : "div[class='vs-c-modal vs-c-confirmation-modal']"
     }
 }
