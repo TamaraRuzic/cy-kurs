@@ -1,40 +1,20 @@
 import organisation from "../fixtures/organisation.json";
-import loginPage from "../fixtures/login.json";
-import data from "../fixtures/data.json"
+import data from "../fixtures/data.json";
+import loginModule from "../models/loginModule";
+import organizationModule from "../models/organisationModule";
+import sidebarModule from "../models/sidebarModule";
 
 describe('Organization test block', () => {
     beforeEach('login', () => {
         cy.visit('/');
-        cy.get(loginPage.loginEmail)
-            .clear()
-            .type(data.user.email)
-            .should('have.value', data.user.email);
-        cy.get(loginPage.loginPass)
-            .clear()
-            .type(data.user.password)
-            .should('have.value', data.user.password);
-        cy.get(loginPage.submitBtn).click();
-        cy.get(organisation.addingOrganisation.addNewOrganisation, { timeout: 5000 }).click();
-        cy.get(organisation.addingOrganisation.organisationName)
-            .type(data.newOrganisation.organisationName)
-            .should('have.value', data.newOrganisation.organisationName);
-        cy.get(organisation.addingOrganisation.nextButton, { timeout: 3000 })
-            .click()
-            .should('be.enabled');
-        cy.get(organisation.addingOrganisation.nextButton, { timeout: 3000 }).click();
-        cy.get(organisation.addingOrganisation.okBtn).click();
-        cy.get(organisation.organisationSidebar.settings).click();
+        loginModule.login({});
+        organizationModule.createOrganization({});
+        sidebarModule.organizationSettings.should('be.visible').click();
+        // cy.get(organisation.organisationSidebar.settings).click();
     });
 
     afterEach('delete organisation', () => {
-        cy.get(organisation.organisationInfo.deleteOrganisation, { timeout: 5000 }).click();
-        cy.get(organisation.organisationInfo.enterPasswordToDelete)
-            .clear()
-            .type(data.user.password)
-            .should('have.value', data.user.password);
-        cy.get(organisation.organisationInfo.yesDelete)
-            .click()
-            .should('be.enabled');
+        organizationModule.deleteOrganization();
         cy.url().should('include','my-organizations');
     });
 
@@ -136,11 +116,7 @@ describe('Organization test block', () => {
     });
 
     it.skip('delete organisation failed due to wrong password', () => {
-        cy.get(organisation.organisationInfo.deleteOrganisation).click();
-        cy.get(organisation.organisationInfo.enterPasswordToDelete)
-            .type(data.invalidUser.invalidPassword)
-            .should('have.value', data.invalidUser.invalidPassword);
-        cy.get(organisation.organisationInfo.yesDelete).click();
+        organizationModule.deleteOrganization(password = data.invalidUser.invalidPassword);
         cy.get(organisation.organisationInfo.closeDeleteModal).click();
         cy.contains('The password is incorrect.', {timeout : 4000})
             .should('exists')

@@ -1,9 +1,9 @@
 /// <reference types="cypress" />
 import loginPage from "../fixtures/login.json";
-import data from "../fixtures/data.json";
-import sidebar from "../fixtures/sidebar.json";
+// import data from "../fixtures/data.json";
+// import sidebar from "../fixtures/sidebar.json";
 import loginModule from "../models/loginModule";
-import sidebarModule, { logoutButton } from "../models/sidebarModule";
+// import sidebarModule, { logoutButton } from "../models/sidebarModule";
 import faker from "faker";
 
 describe('login block', () => {
