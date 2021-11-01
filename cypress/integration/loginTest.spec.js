@@ -2,8 +2,16 @@
 import loginPage from "../fixtures/login.json";
 import data from "../fixtures/data.json";
 import sidebar from "../fixtures/sidebar.json";
+import loginModule from "../models/loginModule";
+import sidebarModule, { logoutButton } from "../models/sidebarModule";
+import faker from "faker";
 
 describe('login block', () => {
+
+   let user = {
+      email : faker.internet.email(),
+      password : faker.internet.password()
+   };
 
    beforeEach('visit vivify scrym', () => {
       cy.visit('/', { timeout: 30000 });
@@ -16,13 +24,8 @@ describe('login block', () => {
    });
 
    it('invalid email', () => {
-      cy.get(loginPage.loginEmail)
-         .type(data.invalidUser.invalidEmail)
-         .should('have.value', data.invalidUser.invalidEmail);
-      cy.get(loginPage.loginPass)
-         .type(data.user.password)
-         .should('have.value', data.user.password);
-      cy.get(loginPage.submitBtn).click();
+      loginModule.login({ mail : "kks"});
+      cy.get(loginPage.loginEmail).should('be.visible');
       cy.get(loginPage.emailRequired)
          .should('be.visible')
          .and('have.text', 'The email field must be a valid email');
@@ -30,9 +33,7 @@ describe('login block', () => {
    });
 
    it('no email', () => {
-      cy.get(loginPage.loginPass)
-         .type(data.user.password)
-         .should('have.value',data.user.password);
+      loginModule.login({mail : ''});
       cy.get(loginPage.submitBtn).click();
       cy.get(loginPage.emailRequired)
          .should('be.visible')
@@ -40,14 +41,8 @@ describe('login block', () => {
          cy.url().should('include','/login');
    });
 
-   it('wrong email', () => {
-      cy.get(loginPage.loginEmail)
-         .type(data.invalidUser.noMonkeyEmail)
-         .should('have.value', data.invalidUser.noMonkeyEmail);
-      cy.get(loginPage.loginPass)
-         .type(data.user.password)
-         .should('have.value',data.user.password);
-      cy.get(loginPage.submitBtn).click();
+   it.only('wrong email', () => {
+      loginModule.login({mail : user.email})
       cy.get(loginPage.errorMsg)
          .should('be.visible')
          .and('have.text', 'Oops! Your email/password combination is incorrect');
@@ -55,10 +50,7 @@ describe('login block', () => {
    });
 
    it('no password', () => {
-      cy.get(loginPage.loginEmail)
-         .type(data.user.email)
-         .should('have.value', data.user.email);
-      cy.get(loginPage.submitBtn).click();
+      loginModule.login({password : ''});
       cy.get(loginPage.passwordRequierd)
          .should('be.visible')
          .and('have.text', 'The password field is required');
@@ -66,12 +58,7 @@ describe('login block', () => {
    });
 
    it('wrong password', () => {
-      cy.get(loginPage.loginEmail)
-         .type(data.user.email)
-         .should('have.value', data.user.email);
-      cy.get(loginPage.loginPass)
-         .type(data.invalidUser.invalidPassword)
-         .should('have.value', data.invalidUser.invalidPassword);
+      loginModule.login({password : 'password'});
       cy.get(loginPage.submitBtn).click();
       cy.get(loginPage.errorMsg)
          .should('be.visible')
@@ -80,13 +67,7 @@ describe('login block', () => {
    });
 
    it('short password', () => {
-      cy.get(loginPage.loginEmail)
-         .type(data.user.email)
-         .should('have.value', data.user.email);
-      cy.get(loginPage.loginPass)
-         .type(data.invalidUser.shortPass)
-         .should('have.value', data.invalidUser.shortPass);
-      cy.get(loginPage.submitBtn).click();
+      loginModule.login({password : 'pas'});
       cy.get(loginPage.passwordRequierd)
          .should('be.visible')
          .and('have.text', 'The password field must be at least 5 characters')
@@ -94,33 +75,13 @@ describe('login block', () => {
    });
 
    it('valid login', () => {
-      cy.get(loginPage.loginEmail)
-         .type(data.user.email)
-         .should('have.value', data.user.email);
-      cy.get(loginPage.loginPass)
-         .type(data.user.password)
-         .should('have.value', data.user.password);
-      cy.get(loginPage.submitBtn).click();
+      loginModule.login({});
       cy.url().should('include','/my-organizations')
    });
 
    it('logout', () => {
-      cy.get(loginPage.loginEmail)
-         .type(data.user.email)
-         .should('have.value', data.user.email);
-      cy.get(loginPage.loginPass)
-         .type(data.user.password)
-         .should('have.value', data.user.password);
-      cy.get(loginPage.submitBtn).click();
-      cy.url().should('include','/my-organizations');
-      cy.get(sidebar.myUser, { timeout: 5000 })
-      .click()
-      .should('be.visible');
-      cy.get(sidebar.profile, { timeout: 3000 })
-      .click();
-      cy.get(sidebar.logout, { timeout: 3000 })
-      .click()
-      .should('be.visible');
+      loginModule.login({});
+      loginModule.logout();
       cy.url().should('include','/login')
       cy.get(loginPage.submitBtn)
          .should('be.visible');

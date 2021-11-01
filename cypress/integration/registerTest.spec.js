@@ -3,6 +3,8 @@ import registerPage from "../fixtures/register.json";
 import data from "../fixtures/data.json";
 import sidebar from "../fixtures/sidebar.json";
 import loginPage from "../fixtures/login.json";
+import register from "../models/registerModule";
+
 
 describe('register test block', () => {
     beforeEach('visit register page and select pricing plan', () => {
@@ -25,16 +27,7 @@ describe('register test block', () => {
     });
 
     it('register existing user', () => {
-        cy.get(registerPage.registerEmail)
-            .type(data.user.email)
-            .should('have.value',data.user.email);
-        cy.get(registerPage.registerPass)
-            .type(data.user.password)
-            .should('have.value',data.user.password);
-        cy.get(registerPage.numberOfUsers)
-            .type(data.newUser.numberOfUsers)
-            .should('have.value',data.newUser.numberOfUsers);
-        cy.get(registerPage.finishRegistration).click();
+        register.register({email : data.user.email, password : data.user.password});
         cy.url().should('eq', 'https://cypress.vivifyscrum-stage.com/sign-up?type=yearly&plan=1&event=page-card')
         cy.get(registerPage.errorMessage)
         .should('be.visible')
@@ -42,62 +35,29 @@ describe('register test block', () => {
     });
 
     it('register new user with no email', () => {
-        cy.get(registerPage.registerPass)
-            .type(data.newUser.registerPass)
-            .should('have.value',data.newUser.registerPass);
-        cy.get(registerPage.numberOfUsers)
-            .type(data.newUser.numberOfUsers)
-            .should('have.value',data.newUser.numberOfUsers);
-        cy.get(registerPage.finishRegistration).click();
+        register.register({email : " "});
         cy.url().should('eq', 'https://cypress.vivifyscrum-stage.com/sign-up?type=yearly&plan=1&event=page-card'),
         cy.get(registerPage.emailRequired)
             .should('be.visible');
     });
 
-    it('register new user with wrong email', () => {
-        cy.get(registerPage.registerEmail)
-            .type(data.invalidUser.invalidEmail)
-            .should('have.value',data.invalidUser.invalidEmail);
-        cy.get(registerPage.registerPass)
-            .type(data.newUser.registerPass)
-            .should('have.value',data.newUser.registerPass);
-        cy.get(registerPage.numberOfUsers)
-            .type(data.newUser.numberOfUsers)
-            .should('have.value',data.newUser.numberOfUsers);
-        cy.get(registerPage.finishRegistration).click();
+    it.only('register new user with wrong email', () => {
+        register.register({email : " takiemail.com "});
         cy.url().should('eq', 'https://cypress.vivifyscrum-stage.com/sign-up?type=yearly&plan=1&event=page-card')
         cy.get(registerPage.emailRequired)
             .should('be.visible');
     });
 
-    it('register new user with no pass', () => {
-        cy.get(registerPage.registerEmail)
-            .type(data.newUser.registerEmail)
-            .should('have.value',data.newUser.registerEmail);
-        cy.get(registerPage.numberOfUsers)
-            .type(data.newUser.numberOfUsers)
-            .should('have.value',data.newUser.numberOfUsers);
-        cy.get(registerPage.pricePlanMonth).click();
-        cy.get(registerPage.finishRegistration)
-        .click();
+    it.only('register new user with no pass', () => {
+        register.register({password : " "});
         cy.url().should('eq', 'https://cypress.vivifyscrum-stage.com/sign-up?type=yearly&plan=1&event=page-card')
         cy.get(registerPage.passwordRequierd)
         .should('be.visible')
         .and('have.text','The password field is required');
     });
 
-    it.only('register new user successfuly', () => {
-        cy.get(registerPage.registerEmail)
-            .type(data.newUser.registerEmail)
-            .should('have.value',data.newUser.registerEmail);
-        cy.get(registerPage.registerPass)
-            .type(data.newUser.registerPass)
-            .should('have.value',data.newUser.registerPass);
-        cy.get(registerPage.numberOfUsers)
-            .type(data.newUser.numberOfUsers)
-            .should('have.value',data.newUser.numberOfUsers);
-        cy.get(registerPage.pricePlanMonth).click();
-        cy.get(registerPage.finishRegistration).click();
+    it('register new user successfuly', () => {
+        register.register({});
         cy.get(sidebar.user, { timeout: 5000 }).click();
         cy.get(sidebar.profile, { timeout: 3000 }).click();
         cy.get(sidebar.logout, { timeout: 3000 }).click();
