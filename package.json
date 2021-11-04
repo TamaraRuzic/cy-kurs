@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/TamaraRuzic/cy-kurs#readme",
   "dependencies": {
-    "cypress": "^8.5.0"
+    "cypress": "^8.5.0",
+    "faker": "^5.5.3"
   }
 }
