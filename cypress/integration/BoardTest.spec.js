@@ -1,4 +1,3 @@
-import loginModule from "../models/loginModule";
 import boardModule from "../models/boardModule";
 import columnModule from "../models/columnModule";
 import taskModule from "../models/taskModule.js";
@@ -9,7 +8,7 @@ describe('Board test block', () => {
    
     beforeEach('login', () => {
         cy.visit('/');
-        loginModule.login({});
+        cy.login({});
         boardModule.createBoard({});
     });
 
