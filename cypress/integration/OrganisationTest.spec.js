@@ -11,11 +11,11 @@ describe('Organization test block', () => {
     });
 
     afterEach('delete organisation', () => {
-        organizationModule.deleteOrganization({});
+        cy.deleteOrganization({});
         cy.url().should('include','my-organizations');
     });
 
-    it('Edit organization name failed', () => {
+    it.only('Edit organization name failed', () => {
         organizationModule.editOrganizationName({name : ''});
     });
 

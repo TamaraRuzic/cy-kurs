@@ -13,7 +13,7 @@ describe('Board test block', () => {
     });
 
     afterEach('delete board', () => {
-        boardModule.deleteBoard({});
+        cy.deleteBoard({});
         cy.url().should('include', 'organizations')
     });
 
@@ -33,7 +33,7 @@ describe('Board test block', () => {
         taskModule.deleteTask({});
     });
 
-    it('edit board basic info failed - title and code required', () => {
+    it.only('edit board basic info failed - title and code required', () => {
         boardModule.editBoard({title : ''});
     });
 
