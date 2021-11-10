@@ -54,13 +54,9 @@ Cypress.Commands.add('login', ({ mail = data.user.email, password = data.user.pa
 });
 
 Cypress.Commands.add('logout', () => {
-    cy.intercept("POST", "**/api/v2/logout").as('logout');
     sidebar.myUser.click();
     sidebar.profile.click();
     sidebar.logoutButton.click();
-    cy.wait('@logout').then((intercept) => {
-        expect(intercept.response.statusCode).to.eq(201);
-    })
 });
 
 //organisation commands
@@ -91,8 +87,8 @@ Cypress.Commands.add('deleteOrganization', ({ password = data.user.password }) =
 
 // board commands
 Cypress.Commands.add('createBoard', ({ name = data.newBoard.boardName }) => {
-    sidebarModule.addNewTopSidebar.click();
-    sidebarModule.addBoard.click();
+    sidebar.addNewTopSidebar.click();
+    sidebar.addBoard.click();
     board.organizationDropdown.click();
     board.organizationItem.click();
     board.boardName.type(name);
@@ -105,7 +101,6 @@ Cypress.Commands.add('createBoard', ({ name = data.newBoard.boardName }) => {
 });
 
 Cypress.Commands.add('deleteBoard', () => {
-    cy.intercept("DELETE", "**/api/v2/boards/*").as('deleteBoard')
     board.boardSetting
         .click();
     board.boardDelete
@@ -115,8 +110,6 @@ Cypress.Commands.add('deleteBoard', () => {
         .click();
     board.modalBoard
         .click();
-    cy.wait('@deleteBoard').then((intercept) =>
-        expect(intercept.response.statusCode).to.eq(200));
 });
 
 //

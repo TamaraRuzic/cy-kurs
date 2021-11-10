@@ -77,7 +77,11 @@ describe('login block', () => {
 
    it.only('logout', () => {
       cy.login({});
+      cy.intercept("POST", "**/api/v2/logout").as('logout');
       cy.logout();
+      cy.wait('@logout').then((intercept) => {
+         expect(intercept.response.statusCode).to.eq(201);
+     });
       cy.url().should('include','/login')
       cy.get(loginPage.submitBtn)
          .should('be.visible');

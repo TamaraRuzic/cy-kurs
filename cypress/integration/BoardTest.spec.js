@@ -5,15 +5,18 @@ import taskModule from "../models/taskModule.js";
 
 
 describe('Board test block', () => {
-   
+
     beforeEach('login', () => {
         cy.visit('/');
         cy.login({});
-        boardModule.createBoard({});
+        cy.createBoard({});
     });
 
     afterEach('delete board', () => {
+        cy.intercept("DELETE", "**/api/v2/boards/*").as('deleteBoard')
         cy.deleteBoard({});
+        cy.wait('@deleteBoard').then((intercept) =>
+            expect(intercept.response.statusCode).to.eq(200));
         cy.url().should('include', 'organizations')
     });
 
@@ -25,7 +28,7 @@ describe('Board test block', () => {
         taskModule.createTask({})
     });
 
-    it('edit task', ()=> {
+    it('edit task', () => {
         taskModule.editTask({});
     });
 
@@ -34,7 +37,7 @@ describe('Board test block', () => {
     });
 
     it.only('edit board basic info failed - title and code required', () => {
-        boardModule.editBoard({title : ''});
+        boardModule.editBoard({ title: '' });
     });
 
     it('edit board basic info successfully', () => {
