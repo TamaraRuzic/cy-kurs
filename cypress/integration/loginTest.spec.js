@@ -1,9 +1,5 @@
 /// <reference types="cypress" />
 import loginPage from "../fixtures/login.json";
-// import data from "../fixtures/data.json";
-// import sidebar from "../fixtures/sidebar.json";
-import loginModule from "../models/loginModule";
-// import sidebarModule, { logoutButton } from "../models/sidebarModule";
 import faker from "faker";
 
 describe('login block', () => {
@@ -23,8 +19,8 @@ describe('login block', () => {
          .should('be.empty');
    });
 
-   it('invalid email', () => {
-      loginModule.login({ mail : "kks"});
+   it.only('invalid email', () => {
+      cy.login({ mail : "kks"});
       cy.get(loginPage.loginEmail).should('be.visible');
       cy.get(loginPage.emailRequired)
          .should('be.visible')
@@ -33,7 +29,7 @@ describe('login block', () => {
    });
 
    it('no email', () => {
-      loginModule.login({mail : ''});
+      cy.login({mail : ''});
       cy.get(loginPage.submitBtn).click();
       cy.get(loginPage.emailRequired)
          .should('be.visible')
@@ -42,7 +38,7 @@ describe('login block', () => {
    });
 
    it.only('wrong email', () => {
-      loginModule.login({mail : user.email})
+      cy.login({mail : user.email})
       cy.get(loginPage.errorMsg)
          .should('be.visible')
          .and('have.text', 'Oops! Your email/password combination is incorrect');
@@ -50,7 +46,7 @@ describe('login block', () => {
    });
 
    it('no password', () => {
-      loginModule.login({password : ''});
+      cy.login({password : ''});
       cy.get(loginPage.passwordRequierd)
          .should('be.visible')
          .and('have.text', 'The password field is required');
@@ -58,7 +54,7 @@ describe('login block', () => {
    });
 
    it('wrong password', () => {
-      loginModule.login({password : 'password'});
+      cy.login({password : 'password'});
       cy.get(loginPage.submitBtn).click();
       cy.get(loginPage.errorMsg)
          .should('be.visible')
@@ -67,7 +63,7 @@ describe('login block', () => {
    });
 
    it('short password', () => {
-      loginModule.login({password : 'pas'});
+      cy.login({password : 'pas'});
       cy.get(loginPage.passwordRequierd)
          .should('be.visible')
          .and('have.text', 'The password field must be at least 5 characters')
@@ -75,13 +71,17 @@ describe('login block', () => {
    });
 
    it('valid login', () => {
-      loginModule.login({});
+      cy.login({});
       cy.url().should('include','/my-organizations')
    });
 
-   it('logout', () => {
-      loginModule.login({});
-      loginModule.logout();
+   it.only('logout', () => {
+      cy.login({});
+      cy.intercept("POST", "**/api/v2/logout").as('logout');
+      cy.logout();
+      cy.wait('@logout').then((intercept) => {
+         expect(intercept.response.statusCode).to.eq(201);
+     });
       cy.url().should('include','/login')
       cy.get(loginPage.submitBtn)
          .should('be.visible');

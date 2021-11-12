@@ -1,4 +1,3 @@
-import loginModule from "../models/loginModule";
 import boardModule from "../models/boardModule";
 import columnModule from "../models/columnModule";
 import taskModule from "../models/taskModule.js";
@@ -6,15 +5,18 @@ import taskModule from "../models/taskModule.js";
 
 
 describe('Board test block', () => {
-   
+
     beforeEach('login', () => {
         cy.visit('/');
-        loginModule.login({});
-        boardModule.createBoard({});
+        cy.login({});
+        cy.createBoard({});
     });
 
     afterEach('delete board', () => {
-        boardModule.deleteBoard({});
+        cy.intercept("DELETE", "**/api/v2/boards/*").as('deleteBoard')
+        cy.deleteBoard({});
+        cy.wait('@deleteBoard').then((intercept) =>
+            expect(intercept.response.statusCode).to.eq(200));
         cy.url().should('include', 'organizations')
     });
 
@@ -26,7 +28,7 @@ describe('Board test block', () => {
         taskModule.createTask({})
     });
 
-    it('edit task', ()=> {
+    it('edit task', () => {
         taskModule.editTask({});
     });
 
@@ -34,8 +36,8 @@ describe('Board test block', () => {
         taskModule.deleteTask({});
     });
 
-    it('edit board basic info failed - title and code required', () => {
-        boardModule.editBoard({title : ''});
+    it.only('edit board basic info failed - title and code required', () => {
+        boardModule.editBoard({ title: '' });
     });
 
     it('edit board basic info successfully', () => {

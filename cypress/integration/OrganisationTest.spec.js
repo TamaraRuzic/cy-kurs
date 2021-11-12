@@ -1,23 +1,21 @@
-import organisation from "../fixtures/organisation.json";
 import data from "../fixtures/data.json";
-import loginModule from "../models/loginModule";
 import organizationModule from "../models/organisationModule";
 import sidebarModule from "../models/sidebarModule";
 
 describe('Organization test block', () => {
     beforeEach('login', () => {
         cy.visit('/');
-        loginModule.login({});
+        cy.login({});
         organizationModule.createOrganization({});
         sidebarModule.organizationSettings.should('be.visible').click();
     });
 
     afterEach('delete organisation', () => {
-        organizationModule.deleteOrganization({});
+        cy.deleteOrganization({});
         cy.url().should('include','my-organizations');
     });
 
-    it('Edit organization name failed', () => {
+    it.only('Edit organization name failed', () => {
         organizationModule.editOrganizationName({name : ''});
     });
 
@@ -41,6 +39,9 @@ describe('Organization test block', () => {
 
     it('delete organisation failed due to wrong password', () => {
         organizationModule.deleteOrganization({password : data.invalidUser.invalidPassword});
+        cy.contains('The password is incorrect.', {timeout : 4000})
+        .should('be.visible');
+        organisation.closeModalDelete.should('be.visible').click();
     });
 
      // it('change ownership', () => {
