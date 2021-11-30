@@ -1,5 +1,8 @@
 {
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3f3411c454f91fa76eb6e2b571ffbfb8a1f992cd
     "video": false,
     "reporter": "mochawesome",
     "reporterOptions": {
