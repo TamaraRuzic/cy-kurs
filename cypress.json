@@ -1,4 +1,5 @@
 {
+    "apiUrl" : "https://cypress-api.vivifyscrum-stage.com/api",
     "video": false,
     "reporter": "mochawesome",
     "reporterOptions": {
