@@ -48,7 +48,7 @@ describe("Board spec API", () => {
         })
     }); 
     let allBoards
-    it("Get all boards", () => {
+    it("06 - Get all boards", () => {
         boardApi.get({
             token: userToken,
             organizationId: organizationId
