@@ -1,0 +1,20 @@
+{
+    "accounts" : {
+        "andrija" : {
+            "email" : "andrija989@gmail.com",
+            "password" : "Cuca5555"
+        },
+        "tamara" : {
+            "email" : "tamara.ruzic@vivify.com",
+            "password" : "Test1234!"
+        }
+    },
+    "sara" : {
+        "email" : "sarastanacev97+1@gmail.com",
+        "password" : "Test1234"
+    },
+    "rade" : {
+        "email" : "raex_serbia@yahoo.com",
+        "password" : "test1234"
+    }
+}
